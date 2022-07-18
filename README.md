@@ -146,6 +146,8 @@ teritorid tx staking create-validator --chain-id teritori-testnet-v2 --commissio
 
 # Validator oluşturduktan sonra discordda role request kanalından rol alın
 
+# poll kanalında türk bayrağı emojisine tıklayın
+
 # Explorer: https://teritori.explorers.guru/
 
 ## Telegram kanalı: https://t.me/TeritoriTurkish
