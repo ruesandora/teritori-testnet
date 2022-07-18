@@ -104,7 +104,7 @@ sudo nano /etc/systemd/system/teritorid.service
 
 # En üste altta ki komudu ekliyoruz, en alta EOF yazıyoruz:
 ```
-sudo nano /etc/systemd/system/teritorid.service
+tee <<EOF >/dev/null /etc/systemd/system/teritorid.service
 ```
 
 # Bu şekilde gözükecek:
