@@ -1,8 +1,5 @@
 <h1 align="center">Teritori Testnet </h1>
 
-
-# KURMAYIN FLOOD BITMEDI
-
 ### Selamlar, bugün Cosmos üzerinde olan Teritori Network'ün testnetine katılacağız, keyifli okumalar. 
 
 *Telegram kanalı: https://t.me/TeritoriTurkish*
@@ -115,3 +112,6 @@ SNAP_RPC="http://teritori.stake-take.com:26657/"
 sudo systemctl restart teritorid
 ```
 
+# Validator oluşturma Moniker (validator ısmı) ve from (cüzdan) kısımlarını düzenleyin:
+
+teritorid tx staking create-validator --chain-id teritori-testnet-v2 --commission-rate 0.1 --commission-max-rate 0.1 --commission-max-change-rate 0.1 --min-self-delegation "900000" --amount 900000utori --pubkey $(teritorid tendermint show-validator) --moniker "RuesValidator" --from rues --fees 555utori
