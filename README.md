@@ -148,6 +148,10 @@ teritorid tx staking create-validator --chain-id teritori-testnet-v2 --commissio
 
 ## Telegram kanalı: https://t.me/TeritoriTurkish
 
+# En az 11 sunucu kullanıp, 8 saat yedi bu lanet testnet :) çünkü kimse peer paylaşmamış addrbook kullandık mecbur, siz 5dkda kurucaksınız :)
+
+## NOT ÖDÜL HAKKINDA BİLGİ YOK
+
 # Hesaplar:
 
 [<img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" width="16px"> Twitter   ](https://twitter.com/Ruesandora0) 
