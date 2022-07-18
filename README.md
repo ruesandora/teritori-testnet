@@ -135,12 +135,14 @@ $request Cüzdan adresi
 ```
 
 # Bu komutu ara ara kullanın en altta false yazınca validator oluşturalım:
-
+```
 teritorid status 2>&1 | jq .SyncInfo
+```
 
 # Eşleşince Validator oluşturma Moniker (validator ısmı) ve from (cüzdan) kısımlarını düzenleyin:
-
+```
 teritorid tx staking create-validator --chain-id teritori-testnet-v2 --commission-rate 0.1 --commission-max-rate 0.1 --commission-max-change-rate 0.1 --min-self-delegation "900000" --amount 900000utori --pubkey $(teritorid tendermint show-validator) --moniker "RuesValidator" --from rues --fees 555utori
+```
 
 # Explorer: https://teritori.explorers.guru/
 
