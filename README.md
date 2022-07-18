@@ -93,25 +93,67 @@ systemctl daemon-reload
 systemctl restart teritorid
 ```
 
-# Daha sonra loglara bakalım:
+# Şimdi servis dosyasının içine giriyoruz:
+```
+sudo nano /etc/systemd/system/teritorid.service
+```
+
+# Bu şekilde çıkacak:
+
+![image](https://user-images.githubusercontent.com/101149671/179573888-cde81f51-7074-4808-adba-fdf6d12388d3.png)
+
+# En üste altta ki komudu ekliyoruz, en alta EOF yazıyoruz:
+```
+sudo nano /etc/systemd/system/teritorid.service
+```
+
+# Bu şekilde gözükecek:
+
+Not: CTRL+X+Y+ENTER yapıp kaydediyoruz
+
+![image](https://user-images.githubusercontent.com/101149671/179574090-fe1183c9-d06b-40e6-b7a2-51a09f588167.png)
+
+# Şimdi addrbook ekliyoruz:
+```
+sudo systemctl stop teritorid
+rm $HOME/.teritorid/config/addrbook.json
+wget -O $HOME/.teritorid/config/addrbook.json https://raw.githubusercontent.com/StakeTake/guidecosmos/main/teritori/teritori-testnet-v2/addrbook.json
+sudo systemctl restart teritorid
+```
+# Daha sonra logları kontrol ediyoruz ve eşleşmeye başlıyor. (başlamazsa 4-5 dakika bekleyin)
 ```
 journalctl -u teritorid.service -f -n 100
 ```
 
-# Eşleşme sorunu yaşarsa peer ekleyelim:
+# Eşleşmeye başlarken cüzdan oluşturalım (<> kalkacak):
 ```
-PEERS="0b42fd287d3bb0a20230e30d54b4b8facc412c53@176.9.149.15:26656,2f394edda96be07bf92b0b503d8be13d1b9cc39f@5.9.40.222:26656,8ce81af6b4acee9688b9b3895fc936370321c0a3@78.46.106.69:26656,2371b28f366a61637ac76c2577264f79f0965447@176.9.19.162:26656,2f394edda96be07bf92b0b503d8be13d1b9cc39f@5.9.40.222:26656,8ce81af6b4acee9688b9b3895fc936370321c0a3@78.46.106.69:26656,0b42fd287d3bb0a20230e30d54b4b8facc412c53@176.9.149.15:26656,2371b28f366a61637ac76c2577264f79f0965447@176.9.19.162:26656,8ce81af6b4acee9688b9b3895fc936370321c0a3@78.46.106.69:26656,0b42fd287d3bb0a20230e30d54b4b8facc412c53@176.9.149.15:26656,2371b28f366a61637ac76c2577264f79f0965447@176.9.19.162:26656,2f394edda96be07bf92b0b503d8be13d1b9cc39f@5.9.40.222:26656"
+teritorid keys add <Rues>
 ```
-
+# Test tokeni için discorda gidelim: https://discord.gg/Z968SBZdXb
 ```
-sed -i.bak -e "s/^seeds =./seeds = "$SEEDS"/; s/^persistent_peers =./persistent_peers = "$PEERS"/" $HOME/.teritorid/config/config.toml
-SNAP_RPC="http://teritori.stake-take.com:26657/"
-```
-
-```
-sudo systemctl restart teritorid
+$request Cüzdan adresi
 ```
 
-# Validator oluşturma Moniker (validator ısmı) ve from (cüzdan) kısımlarını düzenleyin:
+# Bu komutu ara ara kullanın en altta false yazınca validator oluşturalım:
+
+teritorid status 2>&1 | jq .SyncInfo
+
+# Eşleşince Validator oluşturma Moniker (validator ısmı) ve from (cüzdan) kısımlarını düzenleyin:
 
 teritorid tx staking create-validator --chain-id teritori-testnet-v2 --commission-rate 0.1 --commission-max-rate 0.1 --commission-max-change-rate 0.1 --min-self-delegation "900000" --amount 900000utori --pubkey $(teritorid tendermint show-validator) --moniker "RuesValidator" --from rues --fees 555utori
+
+# Explorer: https://teritori.explorers.guru/
+
+## Telegram kanalı: https://t.me/TeritoriTurkish
+
+# Hesaplar:
+
+[<img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" width="16px"> Twitter   ](https://twitter.com/Ruesandora0) 
+
+[<img src="https://cdn-icons-png.flaticon.com/512/1336/1336494.png" width="16px"> Forum   ](https://forum.rues.info/index.php)
+
+[<img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" width="16px"> Telegram Announcement   ](https://t.me/RuesAnnouncement)
+
+[<img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" width="16px"> Telegram Chat   ](https://t.me/RuesChat)
+
+[Discord](https://discord.gg/ruescommunity)
