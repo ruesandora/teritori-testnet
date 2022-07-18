@@ -144,6 +144,8 @@ teritorid status 2>&1 | jq .SyncInfo
 teritorid tx staking create-validator --chain-id teritori-testnet-v2 --commission-rate 0.1 --commission-max-rate 0.1 --commission-max-change-rate 0.1 --min-self-delegation "900000" --amount 900000utori --pubkey $(teritorid tendermint show-validator) --moniker "RuesValidator" --from rues --fees 555utori
 ```
 
+# Validator oluşturduktan sonra discordda role request kanalından rol alın
+
 # Explorer: https://teritori.explorers.guru/
 
 ## Telegram kanalı: https://t.me/TeritoriTurkish
