@@ -13,7 +13,7 @@ Not: Aslında 1 CPU bile yeterli olabilir ama benim tavsiyem bu CPU ve RAM değe
 ```
 2 CPU
 2 RAM
-80 GB SSD
+160 GB SSD
 ```
 # Makinemizi kuruyoruz:
 ```
