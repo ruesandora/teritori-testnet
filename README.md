@@ -1,6 +1,6 @@
 <h1 align="center">Teritori Testnet </h1>
 
-### Selamlar, bugün Cosmos üzerinde olan Teritori Network'ün testnetine katılacağız, keyifli okumalar. 
+### Selamlar, bugün Cosmos üzerinde olan Teritori Network'ün testnetine katılacağız, keyifli okumalar... 
 
 *Telegram kanalı: https://t.me/TeritoriTurkish*
 
